@@ -1,0 +1,2 @@
+rpi-router.service /etc/systemd/service/rpi-router.service
+rpi-router.sh /usr/local/sbin/rpi-router.sh

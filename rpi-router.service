@@ -1,0 +1,14 @@
+[Unit]
+Description=Automatic routing between multiple isp
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=sshd.service
+Requires=sshd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/rpi-router.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
