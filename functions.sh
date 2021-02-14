@@ -6,6 +6,9 @@ function get_ping(){
     iface=$1
     ping_result=$(ping -I $iface -4 -c $ping_sample_count $ping_host)
     avg_ping=$(echo "$ping_result" | grep rtt | awk '{ print $4 }' | awk -F/ '{ print $2 }' ) 
+    if [ -z "$avg_ping" ]; then
+	    avg_ping=99999
+    fi
     echo "$avg_ping"
 }
 
