@@ -31,7 +31,7 @@ function get_min_latency_interface(){
     1>&2 echo "Current gateway $current_gateway"
     1>&2 echo "Calculating latency for interfaces $isp_interfaces"
     for iface in $isp_interfaces; do
-	1>&2 echo "Calucating latency for $iface"
+	1>&2 echo "Calculating latency for $iface"
         latency=$(get_ping $iface)
 	1>&2 echo "Got $latency for $iface"
 	if (( $(echo "$latency<$min_latency" | bc -l) )); then
