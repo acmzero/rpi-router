@@ -6,7 +6,7 @@ source env.sh
 # enable port forwarding
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-iptables -F
+#iptables -F
 for iface in $isp_interfaces; do
     iptables -t nat -A POSTROUTING -o $iface -j MASQUERADE
     iptables -A FORWARD -i $listen_interface -o $iface -j ACCEPT
